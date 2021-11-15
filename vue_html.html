@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>VUE TREINO</title>
+</head>
+<body>
+
+        <div id="app">
+            <h1>{{mensagem}}</h1>
+            <h1 v-text="mensagem"></h1>
+            <h1 v-html="mensagem"></h1>
+                <div class="mouse:hover">
+                    <h2 v-bind:title="titulo"> Testando cursor</h2>
+                    <!-- ou -->
+                    <h2 :title="titulo"> Testando cursor</h2>
+                </div>
+
+                <div class="lista">
+                    <h2>{{listas.id}}</h2>
+                    <h2>{{listas.nome}}</h2>
+                    <h2>{{listas.idioma}}</h2>
+
+                    <div class="arrey">
+                        <h2>{{arrey[0].id}}</h2>
+                        <h2>{{arrey[0].nome}}</h2>
+                        <h2>{{arrey[0].idioma + '' + ','+ 'concatenando'}}</h2>
+                    </div>
+
+                </div>
+        </div>
+
+        
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                mensagem:'<u>testando vue.js no html</u>',
+                titulo: 'aqui aparecerá uma legenda',
+                listas:
+                {
+                    id:1,
+                    nome:'Stênio Sousa fonteles',
+                    idioma:'Português'
+
+                },
+
+                arrey: [
+                    {
+                    id:1,
+                    nome:'Lucas',
+                    idioma:'frances'
+                    },
+
+                    {
+                    id:2,
+                    nome:'joão',
+                    idioma:'tailandes'
+                    },
+
+                    {
+                    id:3,
+                    nome:'matheus',
+                    idioma:'ingles'
+                    }
+                    ]
+            }
+        });
+
+    </script>
+</body>
+</html>
